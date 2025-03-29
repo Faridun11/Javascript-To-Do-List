@@ -1,0 +1,153 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: burlywood;
+    margin: auto;
+    padding: 5rem 0.5rem 0 0.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.todolistform {
+    max-width: 400px;
+    margin: auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 110, 255, 0.5);
+    border: 2px solid blue;
+    border-radius: 10px;
+}
+
+.todolistform h1 {
+    font-size: 30px;
+    font-weight: bolder;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(38, 38, 38);
+    text-shadow: 2px 2px 3px rgba(0, 0, 255, 0.567);
+    padding: 0.5rem 0 0.5rem 0;
+    text-align: center;
+}
+
+.todolistform .form {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.todolistform .form input {
+    width: 70%;
+    outline: none;
+    border: 1px solid black;
+    padding: 0.5rem 0 0.4rem 0.4rem;
+    border-radius: 5px;
+}
+
+.todolistform .form input:focus {
+    border: 1.5px solid rgba(0, 0, 255, 0.813);
+    padding: 0.5rem 0 0.4rem 0.5rem;
+}
+
+.todolistform .form .formButtonAdd {
+    width: 20%;
+    padding: 0.3rem 0.5rem;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    background-color: blue;
+    border-radius: 2px;
+    letter-spacing: 1px;
+    color: white;
+    transition-duration: 0.1s;
+}
+
+.todolistform .form .formButtonAdd:hover {
+    transition-duration: 0.1s;
+    cursor: pointer;
+    color: white;
+    background-color: rgb(0, 0, 189);
+}
+
+.todolistform .list {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 6px;
+    list-style: none;
+}
+
+.todolistform .list li {
+    width: 100%;
+    padding: 0.4rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgba(0, 110, 255, 0.5);
+    border-radius: 5px;
+}
+
+
+.todolistform .list li .checkbox {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+
+.todolistform .list li span {
+    font-size: 18px;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.todolistform .list li .list__button__edit {
+    padding: 0.2rem 0.7rem;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    background-color: green;
+    border: none;
+    border-radius: 3px;
+    transition-duration: 0.1s;
+}
+
+.todolistform .list li .list__button__edit:hover {
+    background-color: rgb(25, 158, 25);
+    transition-duration: 0.1s;
+    cursor: pointer;
+}
+
+.list__button__delete {
+    padding: 0.2rem 0.8rem;
+    font-size: 13px;
+    font-weight: 600;
+    background-color: red;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    color: white;
+    transition-duration: 0.1s;
+}
+
+.list__button__delete:hover {
+    background-color: rgb(203, 10, 10);
+    transition-duration: 0.1s;
+    cursor: pointer;
+}
