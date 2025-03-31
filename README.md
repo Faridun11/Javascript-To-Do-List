@@ -16,10 +16,10 @@ This project is a simple and convenient **To-Do List** application created using
 ## 📷 Screenshots
 
 **📱 Mobile version**
-![Mobile view](img/phone.png)
+![Mobile view](scr/img/phone.png)
 
 **💻 Desktop version**
-![Desktop view](img/deskopt.png)
+![Desktop view](scr/img/deskopt.png)
 
 ---
 
