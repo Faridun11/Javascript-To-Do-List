@@ -5,13 +5,28 @@ let elFormInput = elForm.querySelector(".form__input");
 
 let todosArr = []
 
+const deleteTodo = (e) => {
+    let dataId = e.target.dataset.ID
+
+    let findTodo = todosArr.findIndex(i => i.id == dataId)
+
+    todosArr.splice(findTodo, 1)
+
+    renderArr(todosArr, elList)
+}
+
 function renderArr(arr, list) {
     list.innerHTML = null
 
     arr.map(item => {
         let cloneTemplate = elTemplate.cloneNode(true)
 
-        cloneTemplate.querySelector("span").textContent = item.content
+        let todoContent = cloneTemplate.querySelector("span")
+        let todoDeleteBtn = cloneTemplate.querySelector(".list__button__delete")
+
+        todoDeleteBtn.dataset.ID = item.id
+        todoContent.textContent = item.content
+        todoDeleteBtn.addEventListener("click", deleteTodo)
 
         list.appendChild(cloneTemplate)
     })
@@ -30,6 +45,6 @@ elForm.addEventListener("submit", e => {
 
         renderArr(todosArr, elList);
     } else {
-        alert("Bo`sh joyni to`ldiring")
+        alert("Bo`sh joyni to`ldiring!")
     }
 })
