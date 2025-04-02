@@ -16,7 +16,7 @@ const checkTodo = (e) => {
     console.log(findCheckTodo);
 
     renderArr(todosArr, elList)
-    localStorage.setItem("todos", JSON.stringify(todosArr))
+    window.localStorage.setItem("todos", JSON.stringify(todosArr))
 }
 
 const editTodo = (e) => {
@@ -27,7 +27,7 @@ const editTodo = (e) => {
     findEditTodo.content = newContent
 
     renderArr(todosArr, elList)
-    localStorage.setItem("todos", JSON.stringify(todosArr))
+    window.localStorage.setItem("todos", JSON.stringify(todosArr))
 }
 
 const deleteTodo = (e) => {
@@ -38,7 +38,7 @@ const deleteTodo = (e) => {
     todosArr.splice(findTodo, 1)
 
     renderArr(todosArr, elList)
-    localStorage.setItem("todos", JSON.stringify(todosArr))
+    window.localStorage.setItem("todos", JSON.stringify(todosArr))
 }
 
 function renderArr(arr, list) {
@@ -84,7 +84,7 @@ elForm.addEventListener("submit", e => {
 
         console.log(todosArr);
 
-        localStorage.setItem("todos", JSON.stringify(todosArr))
+        window.localStorage.setItem("todos", JSON.stringify(todosArr))
 
         renderArr(todosArr, elList);
     } else {
