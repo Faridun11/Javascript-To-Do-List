@@ -16,7 +16,7 @@ const checkTodo = (e) => {
     console.log(findCheckTodo);
 
     renderArr(todosArr, elList)
-    window.localStorage.setItem("todos", JSON.stringify(todosArr))
+    localStorage.setItem("todos", JSON.stringify(todosArr))
 }
 
 const editTodo = (e) => {
@@ -27,7 +27,7 @@ const editTodo = (e) => {
     findEditTodo.content = newContent
 
     renderArr(todosArr, elList)
-    window.localStorage.setItem("todos", JSON.stringify(todosArr))
+    localStorage.setItem("todos", JSON.stringify(todosArr))
 }
 
 const deleteTodo = (e) => {
@@ -38,7 +38,7 @@ const deleteTodo = (e) => {
     todosArr.splice(findTodo, 1)
 
     renderArr(todosArr, elList)
-    window.localStorage.setItem("todos", JSON.stringify(todosArr))
+    localStorage.setItem("todos", JSON.stringify(todosArr))
 }
 
 function renderArr(arr, list) {
@@ -84,7 +84,7 @@ elForm.addEventListener("submit", e => {
 
         console.log(todosArr);
 
-        window.localStorage.setItem("todos", JSON.stringify(todosArr))
+        localStorage.setItem("todos", JSON.stringify(todosArr))
 
         renderArr(todosArr, elList);
     } else {
@@ -92,7 +92,7 @@ elForm.addEventListener("submit", e => {
     }
 })
 
-// renderArr(todosArr, elList);
+renderArr(todosArr, elList);
 
 // document.addEventListener("DOMContentLoaded", function () {
 //     elFormInput.addEventListener("click", function () {
@@ -101,7 +101,7 @@ elForm.addEventListener("submit", e => {
 //             const elFormInput = document.createElement("li");
 //             const currentTime = new Date().toLocaleTimeString();
 //             taskItem.innerHTML = `<strong>${taskText}</strong> - <em>${currentTime}</em>`;
-//             taskList.appendChild(elFormInput);
+//             taskList.appendChild(taskItem);
 //             taskInput.value = "";
 //         } else {
 //             alert("Iltimos, vazifani kiriting!");
