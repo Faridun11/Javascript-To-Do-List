@@ -4,6 +4,8 @@ let elList = document.querySelector(".list");
 let elFormInput = elForm.querySelector(".form__input");
 let elListCoutItem = document.querySelector(".list__cout__item");
 
+
+
 let todosArr = JSON.parse(localStorage.getItem("todos")) || []
 
 const checkTodo = (e) => {
@@ -51,11 +53,15 @@ function renderArr(arr, list) {
         let todoDeleteBtn = cloneTemplate.querySelector(".list__button__delete")
         let todoEditBtn = cloneTemplate.querySelector(".list__button__edit")
         let todoCheckBtn = cloneTemplate.querySelector(".checkbox")
+        let todoDate = cloneTemplate.querySelector(".my__date")
 
         todoDeleteBtn.dataset.ID = item.id
         todoEditBtn.dataset.ID = item.id
         todoContent.textContent = item.content
         todoCheckBtn.dataset.ID = item.id
+        todoDate.textContent = item.date
+        let elListItem = cloneTemplate.querySelector(".list__item")
+
         todoDeleteBtn.addEventListener("click", deleteTodo)
         todoEditBtn.addEventListener("click", editTodo)
         todoCheckBtn.addEventListener("change", checkTodo)
@@ -63,6 +69,7 @@ function renderArr(arr, list) {
         if (item.isCompleted) {
             todoContent.style = "text-decoration: line-through; color: black; font-size: 15px"
             todoCheckBtn.checked = true
+            elListItem.style = "opacity: 0.5;"
         }
 
         elListCoutItem.textContent = "cout item: " + todosArr.length
@@ -73,11 +80,21 @@ function renderArr(arr, list) {
 
 elForm.addEventListener("submit", e => {
     e.preventDefault()
+    let date = new Date()
+    let day = date.getDate()
+    let month = date.getMonth() + 1
+    let year = date.getFullYear()
+    let hour = date.getHours()
+    let minutes = date.getMinutes()
+
+    let result = `${day}/${month}/${year} || ${hour}:${minutes}`
+
 
     if (elFormInput.value != "") {
         todosArr.push({
             id: new Date().getMilliseconds(),
             content: elFormInput.value,
+            date: result,
             isCompleted: false,
         })
         elFormInput.value = null
